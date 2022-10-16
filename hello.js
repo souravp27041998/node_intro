@@ -2,6 +2,7 @@ console.log('Hello World...');
 var http=require('http');
 var url=require('url');
 var fs=require('fs');
+var PORT=process.env.PORT || 5000;
 
 http.createServer(function(req,res){
     var fileName=url.parse(req.url,true).pathname;
@@ -16,4 +17,4 @@ http.createServer(function(req,res){
         res.write(data);
         return res.end();
     });
-}).listen(8080);
+}).listen(PORT);
